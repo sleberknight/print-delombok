@@ -1,0 +1,19 @@
+name: 'Print Delombok'
+description: 'Print Delomboked source files'
+inputs:
+  delombokSourcePath:
+    description: 'Path relative to workspace directory where the Delomboked source files are'
+    required: false
+    default: src-delombok
+
+runs:
+  using: "composite"
+  steps:
+    run: |
+      echo "Action path: ${{ github.action_path }}"
+      echo "Inputs:"
+      echo "  directory: ${{ inputs.delombokSourcePath }}"
+      echo "---- Start of Delomboked source files ----"
+      find "${{ inputs.delombokSourcePath }}" -type f -exec cat {} \;
+      echo "---- End of Delomboked source files ----"
+    shell: bash
