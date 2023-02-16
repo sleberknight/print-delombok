@@ -9,11 +9,11 @@ inputs:
 runs:
   using: "composite"
   steps:
-    run: |
-      echo "Action path: ${{ github.action_path }}"
-      echo "Inputs:"
-      echo "  directory: ${{ inputs.delombokSourcePath }}"
-      echo "---- Start of Delomboked source files ----"
-      find "${{ inputs.delombokSourcePath }}" -type f -exec cat {} \;
-      echo "---- End of Delomboked source files ----"
-    shell: bash
+    - run: |
+        echo "Action path: ${{ github.action_path }}"
+        echo "Inputs:"
+        echo "  directory: ${{ inputs.delombokSourcePath }}"
+        echo "---- Start of Delomboked source files ----"
+        find "${{ inputs.delombokSourcePath }}" -type f -exec cat {} \;
+        echo "---- End of Delomboked source files ----"
+      shell: bash
