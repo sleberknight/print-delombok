@@ -14,6 +14,6 @@ runs:
         echo "Inputs:"
         echo "  directory: ${{ inputs.delombokSourcePath }}"
         echo "---- Start of Delomboked source files ----"
-        find "${{ inputs.delombokSourcePath }}" -type f -exec cat {} \;
+        find "${{ inputs.delombokSourcePath }}" -type f -print -exec cat -n {} \;
         echo "---- End of Delomboked source files ----"
       shell: bash
