@@ -18,7 +18,7 @@ Each delomboked source file name is printed followed by its contents, including 
 
 ## Configuration Options
 
-You can configure the `delombokSourcePath` option, which is the path where the delomboked source files exist, relative to the workspace directory. The default values is `src-delombok` which is the default value used in [delombok-action](https://github.com/sleberknight/delombok-action).
+You can configure the `delombokSourcePath` option, which is the path where the delomboked source files exist, relative to the workspace directory. The default value is `src-delombok` which is also the default value used in [delombok-action](https://github.com/sleberknight/delombok-action).
 
 Example:
 
