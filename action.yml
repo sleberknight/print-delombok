@@ -14,6 +14,6 @@ runs:
         echo "Inputs:"
         echo "  directory: ${{ inputs.delombokSourcePath }}"
         echo "---- Start of Delomboked source files ----"
-        find "${{ inputs.delombokSourcePath }}" -type f -print -exec cat -n {} \;
+        if [ -d "${{ inputs.delombokSourcePath }}" ]; then find "${{ inputs.delombokSourcePath }}" -type f -print -exec cat -n {} \; ; echo "No delomboked sources found. Directory ${{ inputs.delombokSourcePath }} does not exist" ; fi
         echo "---- End of Delomboked source files ----"
       shell: bash
